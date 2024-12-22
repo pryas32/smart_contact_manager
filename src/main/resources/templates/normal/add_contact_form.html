@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org"  th:replace="normal/base::Layout(~{::section })">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<section>
+	
+	<div class="card mr-3 ml-3 mt-0">
+		
+		<div class="card-body">
+			
+			<h1 class="text-center">Add Contact</h1>
+			
+			<div class="container-fluid mt-1">
+				
+				<div class="row">
+					
+					<div class="col-md-8 offset-md-2">
+						
+						<form action="#"
+							th:object="${contact}"
+							enctype="multipart/form-data"
+							method="POST"
+							th:action="@{/user/process-contact}"
+							class="mt-2"
+						
+						>
+						
+						<!-- First Name -->
+						<!-- for icon -->
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<div class="input-group-text">
+									<i class="fa fa-plus"></i>
+								</div>
+							</div>
+							
+							<!-- for detail -->
+							<input
+								type="text"
+								id="name"
+								name="name"
+								placeholder="Enter Name"
+								class="form-control"
+								Required
+							/>
+							
+						</div>
+						
+						
+						<!-- Second Name -->
+						<!-- for icon -->
+						<div class="input-group mt-3">
+							<div class="input-group-prepend">
+								<div class="input-group-text">
+									<i class="fas fa-user-alt"></i>
+								</div>
+							</div>
+							
+							<!-- for detail -->
+							<input
+								type="text"
+								id="secondname"
+								name="secondname"
+								placeholder="Enter Nick Name"
+								class="form-control"
+							/>
+							
+						</div>
+						
+						<!-- Phone Field -->
+						<!-- for icon -->
+						<div class="input-group mt-3">
+							<div class="input-group-prepend">
+								<div class="input-group-text">
+									<i class="fa fa-phone"></i>
+								</div>
+							</div>
+							
+							<!-- for detail -->
+							<input
+								type="tel"
+								id="phone"
+								name="phoneno"
+								class="form-control"
+								placeholder="Enter your 10 digit number"
+								Required
+							/>
+							
+						</div>
+						
+						<!-- Email field -->
+						<!-- for icon -->
+						<div class="input-group mt-3">
+							<div class="input-group-prepend">
+								<div class="input-group-text">
+									@
+								</div>
+							</div>
+							
+							<!-- for detail -->
+							<input
+								type="email"
+								id="email"
+								name="email"
+								placeholder="Enter email Name"
+								class="form-control"
+							/>
+							
+						</div>
+						
+						<!-- Work Field -->
+						<!-- for icon -->
+						<div class="input-group mt-3">
+							<div class="input-group-prepend">
+								<div class="input-group-text">
+									<i class="fa fa-briefcase"></i>
+								</div>
+							</div>
+							
+							<!-- for detail -->
+							<input
+								type="text"
+								id="work"
+								name="work"
+								placeholder="Enter work here"
+								class="form-control"
+							/>
+							
+						</div>
+						
+						<!-- Description field -->
+						<div class="form-group mt-3">
+							<textarea id="mytextarea" placeholder="Enter contact description" name="des"  rows="6" class="form-control"></textarea>
+						</div>
+						
+						
+						<!-- Image Filed -->
+						<div class="custom-file">
+							<input
+							type="file"
+							name="image"
+							>
+						</div>
+						
+						<!-- Save Contact field -->
+						<div class="container text-center">
+
+							<button type="submit" class="btn btn-outline-primary ">
+								Save Contact
+							</button>
+						</div>
+						
+						</form>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	
+	</section>
+</body>
+</html>

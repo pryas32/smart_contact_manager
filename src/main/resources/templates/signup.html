@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org"  th:replace="base::Layout(~{::section })">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<section><div class="container">
+<div class="row">
+
+<div class="col-md-6 offset-md-3">
+
+<div class="my-card  mt-8" >
+
+
+<div th:if="${session.message}" th:classappend="${session.message.type}" class="alert alert-primary" role="alert" auto-center>
+ <p class="text-center" th:text="${session.message.content}"></p>
+ <th:block th:remove="all"></th:block>
+ 
+</div>
+
+<div class="container text-center">
+<img  class="" style="width : 80px;" src=" " th:src="@{/image/written-paper.png}" alt="failed to upload image" width="50" height="50">
+</div>
+<h2 class="text-center" >Register Here!!</h2>
+
+<form action=" " th:action="@{/do_register}" method="post" th:object="${user}">
+
+    <!-- username -->
+  <div class="form-group">
+    <label for="name_field">Your Name</label>
+    <input  name="name" type="text" class="form-control" id="name_field"  placeholder="Enter your UserName" required th:value="${user.name}">
+    
+   
+    
+  </div>
+ 
+ <!-- email -->
+ 
+ <div class="form-group">
+    <label for="email_field">Your Email</label>
+    <input name="email" type="email" class="form-control" id="email_field"  placeholder="Enter your Email" required th:value="${user.email}">
+    
+  </div>
+ 
+
+<!-- password -->
+
+<div class="form-group">
+    <label for="pasword_field">Your Password</label>
+    <input name="password" type="password" class="form-control" id="password_field"  placeholder="Enter your Password" required>
+    
+  </div>
+
+ <div class="form-group">
+    <label for="exampleFormControlTextarea1">Description</label>
+    <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Enter something about yourself" required th:value="${user.description}"></textarea>
+  </div>
+
+ <!-- terms and condition  -->
+
+
+<div class="form-group form-check text-center">
+
+<input type="checkbox"
+name="aggrement"
+class="form-check-input"
+id="aggrement"
+/>
+
+<label for="aggrement">Accept terms & conditions</label>
+
+
+</div>
+
+
+<div class="container text-center">
+
+
+<button type="submit" class="btn btn-primary btn-sm">Submit</button>
+<button type="reset" class="btn btn-secondary btn-sm">Reset</button>
+
+</div>
+
+
+
+
+
+</form>
+
+
+
+
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+</div>
+
+</section>
+</body>
+</html>
